@@ -1,7 +1,16 @@
 #!/usr/bin/python3
 import sys
+"""Module to get factors of a num"""
+
 
 def getFactors(num):
+    """Factorizes a number
+
+    Args:
+        num (int): the number to factorize.
+    Return:
+        a size 2 array of the factors
+    """
     if num % 2 == 0:
         return [num // 2, 2]
 
@@ -16,4 +25,3 @@ with open(sys.argv[1]) as my_file:
         num = int(num)
         factors = getFactors(num)
         print("{:d}={:d}*{:d}".format(num, factors[0], factors[1]))
-
