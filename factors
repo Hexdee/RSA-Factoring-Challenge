@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+import sys
+
+def getFactors(num):
+    if num % 2 == 0:
+        return [num // 2, 2]
+
+    for i in range(3, num // 2, 2):
+        if num % i == 0:
+            return [num // i, i]
+
+
+with open(sys.argv[1]) as my_file:
+    lines = my_file.readlines()
+    for num in lines:
+        num = int(num)
+        factors = getFactors(num)
+        print("{:d}={:d}*{:d}".format(num, factors[0], factors[1]))
+
